@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>בִּרְכַּת הַמָּזוֹן - נֹסַח אֶרֶץ יִשְׂרָאֵל</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23000%22><path d=%22M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z%22/></svg>">
+    <style>
+        body { font-family: 'Assistant', sans-serif; transition: background 0.3s, color 0.3s; }
+        .prayer-text { font-family: 'Frank Ruhl Libre', serif; line-height: 2.2; transition: font-size 0.2s; }
+        .bg-light { background-color: #fdfaf6; color: #333; }
+        .bg-dark { background-color: #1a1a1a; color: #e5e5e5; }
+        .parchment { background: #fffdfa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: background 0.3s; }
+        .bg-dark .parchment { background: #2d2d2d; border-color: #d97706; }
+    </style>
+</head>
+<body class="bg-light min-h-screen p-4 md:p-8">
+
+    <div class="max-w-2xl mx-auto">
+        <header class="parchment rounded-xl p-6 mb-6 border-b-4 border-amber-600">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <h1 class="text-xl font-bold text-amber-900">בִּרְכַּת הַמָּזוֹן - נֹסַח אֶרֶץ יִשְׂרָאֵל <span id="date-display" class="font-normal text-amber-700"></span></h1>
+                </div>
+                <div class="flex items-center gap-2 flex-wrap w-full sm:w-auto justify-end">
+                    <!-- מצב יום/לילה -->
+                    <button onclick="toggleTheme()" id="theme-btn" class="bg-amber-600 hover:bg-amber-700 text-white p-2 rounded-lg w-10 h-10 flex items-center justify-center transition-colors">
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    </button>
+                    <!-- הגדלת/הקטנת פונט -->
+                    <button onclick="changeFontSize(2)" class="bg-amber-600 hover:bg-amber-700 text-white w-10 h-10 rounded-lg font-bold transition-colors">+</button>
+                    <button onclick="changeFontSize(-2)" class="bg-amber-600 hover:bg-amber-700 text-white w-10 h-10 rounded-lg font-bold transition-colors">-</button>
+                </div>
+            </div>
+        </header>
+
+        <main id="prayer-body" class="parchment rounded-xl p-6 prayer-text text-xl">
+            <!-- ברכת הזן -->
+            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">בִּרְכַּת הַזָּן</h2>
+            <p class="mb-6">
+בָּרוּךְ אַתָּה, יהוה, אֱלֹהֵינוּ, מֶלֶךְ הָעוֹלָם, הַזָּן אוֹתָנוּ וְאֶת הָעוֹלָם כֻּלּוֹ, בְּטוֹב, בְּחֵן, בְּחֶסֶד וּבְרַחֲמִים. רְעֵנוּ, פַּרְנְסֵנוּ, וְאֶל תַּצְרִיכֵנוּ לִידֵי מַתְּנַת בָּשָׂר וָדָם, שֶׁלֹּא נֵבוֹשׁ וְלֹא נִכָּלֵם לְעוֹלָם וָעֶד. כָּאָמוּר: פּוֹתֵחַ אֶת יָדֶךָ, וּמַשְׂבִּיעַ לְכָל חַי רָצוֹן. בָּרוּךְ אַתָּה, יהוה, הַזָּן אֶת הַכֹּל.</p>
+            
+            <!-- ברכת הארץ -->
+            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">בִּרְכַּת הָאָרֶץ</h2>
+            <p class="mb-6">
+נוֹדֶה לְךָ, יהוה, אֱלֹהֵינוּ, כִּי הִנְחַלְתָּנוּ אֶרֶץ חֶמְדָּה טוֹבָה וּרְחָבָה, בְּרִית וְתוֹרָה, חַיִּים וּמָזוֹן. וְעַל כֻּלָּם אָנוּ מוֹדִים לְךָ וּמְבָרְכִים אֶת שִׁמְךָ לְעוֹלָם וָעֶד, כַּכָּתוּב: וְאָכַלְתָּ, וְשָׂבַעְתָּ; וּבֵרַכְתָּ אֶת יהוה אֱלֹהֶיךָ, עַל הָאָרֶץ הַטֹּבָה אֲשֶׁר נָתַן לָךְ. בָּרוּךְ אַתָּה, יהוה, עַל הָאָרֶץ וְעַל הַמָּזוֹן.</p>
+            
+            <!-- בונה ירושלים -->
+            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">בּוֹנֵה יְרוּשָׁלָיִם</h2>
+            <p class="mb-4">
+רַחֵם, יהוה, אֱלֹהֵינוּ, בְּרַחֲמֶיךָ הָרַבִּים עַל יִשְׂרָאֵל עַמֶּךָ, עַל יְרוּשָׁלַיִם עִירֶךָ וְעַל צִיּוֹן מִשְׁכַּן כְּבוֹדֶךָ. הָאֵר פָּנֶיךָ עַל מִקְדָּשְׁךָ הַשָּׁמֵם. בְּנֵה בֵּיתְךָ, שַׁכְלֵל הֵיכָלֶךָ. וּמַלְכוּת בֵּית דָּוִד הַחֲזֵר לִמְקוֹמָהּ בְּיָמֵינוּ.
+בָּרוּךְ אַתָּה, יהוה, בּוֹנֶה יְרוּשָׁלַיִם. אָמֵן.</p>
+            
+            <!-- קטע יעלה ויבוא (מופיע דינמית על פי התאריך) -->
+            <div id="yaale-veyavo-section" class="my-4 p-4 bg-amber-50 rounded-lg border-r-4 border-amber-600 text-amber-950 hidden leading-relaxed transition-all">
+                <span class="font-bold text-amber-900 block mb-1">יַעֲלֶה וְיָבֹא:</span>
+אָנָּא אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ יַעֲלֶה וְיָבוֹא, יַגִּיעַ וְיֵרָאֶה, יִזָּכֵר וְיִפָּקֵד לְפָנֶיךָ זִכְרוֹנֵנוּ וְזִכְרוֹן אֲבוֹתֵינוּ, וְזִכְרוֹן כָּל עַמְּךָ בֵּית יִשְׂרָאֵל, וְזִכְרוֹן עִירְךָ וּמִקְדָּשְךָ לְטוֹבָה בְּיוֹם רֹאשׁ הַחֹדֶשׁ הַזֶּה: לְרַחֵם עָלֵינוּ בוֹ וּלְהוֹשִׁיעֵנוּ, כִּי אֵל חַנּוּן וְרַחוּם אַתָּה לְבַדְּךָ נִקְרֵאתָ. אָז תַּחְפֹּץ זִבְחֵי צֶדֶק עוֹלָה וְכָלִיל אָז יַעֲלוּ עַל מִזְבַּחֲךָ פָרִים. וְהַשִּׂיאֵנוּ יהוה אֱלהֵינוּ אֶת בִּרְכַּת מועֲדֶיךָ לְשָׁלום כַּאֲשֶׁר אָמַרְתָּ וְרָצִיתָ, כֵּן תְּבָרְכֵנוּ. וּבְנֵה אֶת יְרוּשָׁלַיִם בְּקָרוֹב כַּאֲשֶׁר דִּבַּרְתָּ.</div>
+
+            <!-- הטוב והמטיב -->
+            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">הַטּוֹב וְהַמֵּטִיב</h2>
+            <p class="mb-4">
+בָּרוּךְ אַתָּה, יהוה, אֱלֹהֵינוּ, מֶלֶךְ הָעוֹלָם, הָאֵל, אָבִינוּ, מַלְכֵּנוּ, בּוֹרְאֵנוּ, גּוֹאֲלֵנוּ, הַמֶּלֶךְ הַטּוֹב וְהַמֵּטִיב, שֶׁבְּכָל יוֹם וָיוֹם הוּא מַרְבֶּה לְהֵטִיב עִמָּנוּ, וְהוּא יִגְמְלֵנוּ לָעַד חֵן וָחֶסֶד, רֶוַח וְרַחֲמִים וְכָל טוֹב.</p>
+            
+            <!-- ברכת האורח -->
+            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">ברכת האורח</h2>
+            <p class="mb-4">
+יְהִי רָצוֹן שֶׁלֹא יְבוֹשׁ בַּעַל הַבַּיִת בָּעוֹלָם הַזֶּה וְלֹא יִכָּלֵם לְעוֹלָם הַבָּא.</p>
+            
+            <!-- הרחמן -->
+            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">הָרַחֲמָן</h2>
+            <p class="mb-4">
+הָרַחֲמָן יָאִיר עֵינֵינוּ בִּמְאוֹר תּוֹרָה. יַצְלִיחַ לָנוּ בְּכָל דְּרָכֵינוּ. יָשִׂים יִרְאָתוֹ לְנֶגֶד עֵינֵינוּ. יָסִיר מַחֲלָה מִקִּרְבֵּנוּ. יִגְעַר בְּחוֹשְׁבֵי רָעָתֵנוּ. הָרַחֲמָן יַנְחִילֵנוּ נִצָּחוֹן עַל כָּל אוֹיְבֵינוּ וְיִירַשׁ זַרְעֵנוּ אֵת שַׁעַר שֹׂנְאֵינוּ. יִהְיֶה לָנוּ עוֹזֵר וְסוֹמֵךְ. יהוה עֹ֖ז לְעַמּ֣וֹ יִתֵּ֑ן יהוה יְבָרֵ֖ךְ אֶת עַמּ֣וֹ בַשָּׁלֽוֹם.</p>
+            
+        </main>
+    </div>
+
+    <script>
+        function toggleTheme() { 
+            document.body.classList.toggle('bg-dark'); 
+            document.getElementById('moon-icon').classList.toggle('hidden');
+            document.getElementById('sun-icon').classList.toggle('hidden');
+        }
+        
+        function changeFontSize(delta) {
+            const body = document.getElementById('prayer-body');
+            const style = window.getComputedStyle(body, null).getPropertyValue('font-size');
+            body.style.fontSize = (parseFloat(style) + delta) + 'px';
+        }
+
+        // המרת מספרים לפורמט אותיות עבריות (גימטריה) עם גרשיים נכונים
+        function toGimel(n) {
+            const map = {1:'א', 2:'ב', 3:'ג', 4:'ד', 5:'ה', 6:'ו', 7:'ז', 8:'ח', 9:'ט', 10:'י', 20:'כ', 30:'ל', 40:'מ', 50:'נ', 60:'ס', 70:'ע', 80:'פ', 90:'צ', 100:'ק', 200:'ר', 300:'ש', 400:'ת'};
+            let res = '', rem = n;
+            while (rem >= 400) { res += 'ת'; rem -= 400; }
+            if (rem >= 300) { res += 'ש'; rem -= 300; }
+            if (rem >= 200) { res += 'ר'; rem -= 200; }
+            if (rem >= 100) { res += 'ק'; rem -= 100; }
+            if (rem >= 10) {
+                if (rem === 15) { res += 'טו'; rem = 0; }
+                else if (rem === 16) { res += 'טז'; rem = 0; }
+                else {
+                    const t = Math.floor(rem/10)*10;
+                    res += map[t];
+                    rem %= 10;
+                }
+            }
+            if (rem > 0) res += map[rem];
+            return res.length > 1 ? res.slice(0, -1) + '"' + res.slice(-1) : res + "'";
+        }
+
+        // קביעת סוג החג המתאים להצגה בתוך נוסח יעלה ויבוא
+        function getHolidayName(day, monthName) {
+            if (day === 1 || day === 30) return "רֹאשׁ הַחֹדֶשׁ";
+            if (monthName.includes("ניסן") && day >= 15 && day <= 21) return "חַג הַמַּצּוֹת";
+            if ((monthName.includes("סיון") || monthName.includes("סיוון")) && day === 6) return "חַג הַשָּׁבֻעוֹת";
+            if (monthName.includes("תשרי")) {
+                if (day === 1 || day === 2) return "הַזִּכָּרוֹן";
+                if (day === 10) return "הַכִּפּוּרִים";
+                if (day >= 15 && day <= 21) return "חַג הַסֻּכּוֹת";
+                if (day === 22) return "שְׁמִינִי עֲצֶרֶת הַחַג";
+            }
+            return "רֹאשׁ הַחֹדֶשׁ / הַחַג";
+        }
+
+        // בדיקה אוטומטית אם היום חל מועד כלשהו שמצריך "יעלה ויבוא"
+        function checkAutoYaale() {
+            try {
+                const date = new Date();
+                const formatter = new Intl.DateTimeFormat('he-u-ca-hebrew', { day: 'numeric', month: 'long', year: 'numeric' });
+                const parts = formatter.formatToParts(date);
+                const day = parseInt(parts.find(p => p.type === 'day').value);
+                const monthName = parts.find(p => p.type === 'month').value.replace(/[^א-ת\s']/g, '').trim();
+                
+                // תנאי לקביעה אם יש להציג "יעלה ויבוא"
+                const isHoliday = (day === 1 || day === 30 || 
+                                  (monthName.includes("ניסן") && day >= 15 && day <= 21) ||
+                                  ((monthName.includes("סיון") || monthName.includes("סיוון")) && day === 6) ||
+                                  (monthName.includes("תשרי") && (day === 1 || day === 2 || day === 10 || (day >= 15 && day <= 22))));
+
+                const section = document.getElementById('yaale-veyavo-section');
+                if (isHoliday) {
+                    section.classList.remove('hidden');
+                    document.getElementById('holiday-name').innerText = getHolidayName(day, monthName);
+                } else {
+                    section.classList.add('hidden');
+                }
+            } catch(e) {
+                document.getElementById('yaale-veyavo-section').classList.add('hidden');
+            }
+        }
+
+        // טעינת ועדכון התאריך העברי של היום במסך
+        async function updateDate() {
+            try {
+                const date = new Date();
+                const formatter = new Intl.DateTimeFormat('he-u-ca-hebrew', { day: 'numeric', month: 'long', year: 'numeric' });
+                const parts = formatter.formatToParts(date);
+                
+                const day = parseInt(parts.find(p => p.type === 'day').value);
+                const monthName = parts.find(p => p.type === 'month').value.replace(/[^א-ת\s']/g, '').trim();
+                const year = parseInt(parts.find(p => p.type === 'year').value);
+                
+                document.getElementById('date-display').innerText = `| ${toGimel(day)} ב${monthName} ה'${toGimel(year - 5000)}`;
+                checkAutoYaale();
+            } catch(e) { 
+                // ברירת מחדל בטוחה למניעת קריסה במקרה של חוסר תאימות בדפדפן
+                document.getElementById('date-display').innerText = "| ט\"ז בסיון תשפ\"ו"; 
+            }
+        }
+        
+        updateDate();
+    </script>
+</body>
+</html>
