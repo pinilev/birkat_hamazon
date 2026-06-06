@@ -163,7 +163,8 @@
                 const monthName = parts.find(p => p.type === 'month').value.replace(/[^א-ת\s']/g, '').trim();
                 const year = parseInt(parts.find(p => p.type === 'year').value);
                 
-                document.getElementById('date-display').innerText = `| ${toGimel(day)} ב${monthName} ה'${toGimel(year - 5000)}`;
+//                document.getElementById('date-display').innerText = `| ${toGimel(day)} ב${monthName} ה'${toGimel(year - 5000)}`; //
+                document.getElementById('date-display').innerText = ` ${toGimel(day)} ב${monthName} ה'${toGimel(year - 5000)}`;
                 checkAutoYaale();
             } catch(e) { 
                 // ברירת מחדל בטוחה למניעת קריסה במקרה של חוסר תאימות בדפדפן
