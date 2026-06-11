@@ -4,7 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>בִּרְכַּת הַמָּזוֹן - נֹסַח אֶרֶץ יִשְׂרָאֵל</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">
+function checkAutoYaale() {
+    const date = new Date();
+    // בדיקה אם מחר הוא ראש חודש (ההלכה היא לפי הלילה שלפני) או היום ראש חודש
+    // בשביל פשטות, נבדוק לפי התאריך העברי של ה-Intl
+    const formatter = new Intl.DateTimeFormat('he-u-ca-hebrew', { day: 'numeric' });
+    const day = parseInt(formatter.format(date));
+    
+    // בלוח עברי, אם היום ה-1 בחודש או ה-30 (יום ראשון של ר"ח במידה והחודש מלא)
+    if (day === 1 || day === 30) {
+        document.getElementById('yaale-veyavo').classList.remove('hidden');
+    }
+}        
+    </script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=synagogue" />
     <style>
@@ -54,6 +68,14 @@
 רַחֵם, יהוה, אֱלֹהֵינוּ, בְּרַחֲמֶיךָ הָרַבִּים עַל יִשְׂרָאֵל עַמֶּךָ, עַל יְרוּשָׁלַיִם עִירֶךָ וְעַל צִיּוֹן מִשְׁכַּן כְּבוֹדֶךָ. הָאֵר פָּנֶיךָ עַל מִקְדָּשְׁךָ הַשָּׁמֵם. בְּנֵה בֵּיתְךָ, שַׁכְלֵל הֵיכָלֶךָ. וּמַלְכוּת בֵּית דָּוִד הַחֲזֵר לִמְקוֹמָהּ בְּיָמֵינוּ.
 בָּרוּךְ אַתָּה, יהוה, בּוֹנֶה יְרוּשָׁלַיִם. אָמֵן.</p>
 
+            <!-- יעלה ויבוא -->
+            <div id="yaale-veyavo" class="hidden">
+    <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">יַעֲלֶה וְיָבֹא</h2>
+    <p class="mb-4">
+        יַעֲלֶה וְיָבֹא וְיַגִּיעַ, יֵרָאֶה וְיֵרָצֶה, יִשָּׁמַע יִפָּקֵד וְיִזָּכֵר זִכְרוֹנֵנוּ וְזִכְרוֹן אֲבוֹתֵינוּ, וְזִכְרוֹן יְרוּשָׁלַיִם עִירֶךָ, וְזִכְרוֹן כָּל עַמְּךָ בֵּית יִשְׂרָאֵל לְפָנֶיךָ, לִפְלֵיטָה לְטוֹבָה לְחֵן וּלְחֶסֶד וּלְרַחֲמִים, לְחַיִּים טוֹבִים וּלְשָׁלוֹם, בְּיוֹם רֹאשׁ חֹדֶשׁ הַזֶּה. זָכְרֵנוּ יהוה אֱלֹהֵינוּ בּוֹ לְטוֹבָה, וּפָקְדֵנוּ בוֹ לִבְרָכָה, וְהוֹשִׁיעֵנוּ בוֹ לְחַיִּים.
+    </p>
+</div>
+            
             <!-- הטוב והמטיב -->
             <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">הַטּוֹב וְהַמֵּטִיב</h2>
             <p class="mb-4">
