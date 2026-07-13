@@ -3,84 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>בִּרְכַּת הַמָּזוֹן - נֹסַח אֶרֶץ יִשְׂרָאֵל</title>
- 
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=synagogue" />
+    <title>ברכת המזון - נוסח ארץ ישראל</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Frank+Ruhl+Libre:wght@800&family=Secular+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        body { font-family: 'Assistant', sans-serif; transition: background 0.3s, color 0.3s; }
-        .prayer-text { font-family: 'Frank Ruhl Libre', serif; line-height: 2.2; transition: font-size 0.2s; }
-        .bg-light { background-color: #fdfaf6; color: #333; }
-        .bg-dark { background-color: #1a1a1a; color: #e5e5e5; }
-        .parchment { background: #fffdfa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: background 0.3s; }
-        .bg-dark .parchment { background: #2d2d2d; border-color: #d97706; }
+        :root {
+            --font-serif: 'Frank Ruhl Libre', serif;
+            --font-sans: 'Assistant', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #ffffff;
+            color: #000000;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Ultra high-contrast, always bold prayer text static 31px */
+        .prayer-text {
+            font-family: var(--font-serif);
+            line-height: 1.85;
+            font-weight: 800 !important;
+            color: #000000;
+            font-size: 31px; /* Perfect static size for readability */
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-color: #111111;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .accent-text {
+            color: #b45309; /* Deep amber for readability and beauty */
+        }
+
+        /* Custom scrollbar for desktop preview */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.3);
+            border-radius: 4px;
+        }
     </style>
 </head>
-<body class="bg-light min-h-screen p-4 md:p-8">
+<body class="min-h-screen pb-12 flex flex-col antialiased bg-white">
 
-    <div class="max-w-2xl mx-auto">
-        <header class="parchment rounded-xl p-6 mb-6 border-b-4 border-amber-600">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <!-- Top Header -->
+    <header class="sticky top-0 z-30 card border-b backdrop-blur-md bg-opacity-95 transition-all duration-300">
+        <div class="max-w-xl mx-auto px-4 py-2.5 flex items-center justify-between">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="p-2 rounded-full bg-amber-600/10 text-amber-800">
+                    <i class="fa-solid fa-scroll text-lg"></i>
+                </div>
                 <div>
-                    <h1 class="text-xl font-bold text-amber-900">בִּרְכַּת הַמָּזוֹן - נֹסַח אֶרֶץ יִשְׂרָאֵל<br><span id="date-display" class="font-normal text-amber-700"></span></h1>
+                    <h1 class="font-bold text-lg md:text-xl tracking-tight" style="font-family: 'Secular One', sans-serif;">בִּרְכַּת הַמָּזוֹן</h1>
+                    <p class="text-[10px] opacity-95 text-amber-800 font-bold tracking-wider">נֹסַח אֶרֶץ יִשְׂרָאֵל</p>
                 </div>
             </div>
-        </header>
 
-        <main id="prayer-body" class="parchment rounded-xl p-6 prayer-text text-xl">
-            <!-- ברכת הזן -->
-            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">בִּרְכַּת הַזָּן</h2>
-            <p class="mb-6">
-בָּרוּךְ אַתָּה, יהוה, אֱלֹהֵינוּ, מֶלֶךְ הָעוֹלָם, הַזָּן אוֹתָנוּ וְאֶת הָעוֹלָם כֻּלּוֹ, בְּטוֹב, בְּחֵן, בְּחֶסֶד וּבְרַחֲמִים. רְעֵנוּ, פַּרְנְסֵנוּ, וְאֶל תַּצְרִיכֵנוּ לִידֵי מַתְּנַת בָּשָׂר וָדָם, שֶׁלֹּא נֵבוֹשׁ וְלֹא נִכָּלֵם לְעוֹלָם וָעֶד. כָּאָמוּר: פּוֹתֵחַ אֶת יָדֶךָ, וּמַשְׂבִּיעַ לְכָל חַי רָצוֹן. בָּרוּךְ אַתָּה, יהוה, הַזָּן אֶת הַכֹּל.</p>
-            
-            <!-- ברכת הארץ -->
-            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">בִּרְכַּת הָאָרֶץ</h2>
-            <p class="mb-6">
-נוֹדֶה לְךָ, יהוה, אֱלֹהֵינוּ, כִּי הִנְחַלְתָּנוּ אֶרֶץ חֶמְדָּה טוֹבָה וּרְחָבָה, בְּרִית וְתוֹרָה, חַיִּים וּמָזוֹן. וְעַל כֻּלָּם אָנוּ מוֹדִים לְךָ וּמְבָרְכִים אֶת שִׁמְךָ לְעוֹלָם וָעֶד, כַּכָּתוּב: וְאָכַלְתָּ, וְשָׂבַעְתָּ; וּבֵרַכְתָּ אֶת יהוה אֱלֹהֶיךָ, עַל הָאָרֶץ הַטֹּבָה אֲשֶׁר נָתַן לָךְ. בָּרוּךְ אַתָּה, יהוה, עַל הָאָרֶץ וְעַל הַמָּזוֹן.</p>
-            
-            <!-- בונה ירושלים -->
-            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">בּוֹנֵה יְרוּשָׁלָיִם</h2>
-            <p class="mb-4">
-רַחֵם, יהוה, אֱלֹהֵינוּ, בְּרַחֲמֶיךָ הָרַבִּים עַל יִשְׂרָאֵל עַמֶּךָ, עַל יְרוּשָׁלַיִם עִירֶךָ וְעַל צִיּוֹן מִשְׁכַּן כְּבוֹדֶךָ. הָאֵר פָּנֶיךָ עַל מִקְדָּשְׁךָ הַשָּׁמֵם. בְּנֵה בֵּיתְךָ, שַׁכְלֵל הֵיכָלֶךָ. וּמַלְכוּת בֵּית דָּוִד הַחֲזֵר לִמְקוֹמָהּ בְּיָמֵינוּ.
-בָּרוּךְ אַתָּה, יהוה, בּוֹנֶה יְרוּשָׁלַיִם. אָמֵן.</p>
+            <!-- Half-size Compact Toggle Buttons -->
+            <div class="flex items-center space-x-1.5 space-x-reverse bg-amber-500/5 p-1 rounded-lg border border-amber-500/20">
+                <!-- Holiday Toggle -->
+                <button id="btn-toggle-holiday" onclick="toggleTrit('holiday')" class="flex items-center justify-center space-x-1 space-x-reverse w-16 h-8 rounded-md transition-all" title="יעלה ויבוא">
+                    <i class="fa-solid fa-moon text-[10px]"></i>
+                    <span class="text-[10px] font-bold">ר"ח</span>
+                </button>
 
-            <!-- יעלה ויבוא -->
-    <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">יַעֲלֶה וְיָבֹא</h2>
-    <p class="mb-4">
-אָנָּא, אֱלֹהֵינוּ וֶאֱלֹהֵי אֲבוֹתֵינוּ, יַעֲלֶה וְיָבוֹא, יַגִּיעַ וְיִרְאֶה, יִזָּכֵר וְיִפָּקֵד לְפָנֶיךָ זִכְרוֹנֵנוּ וְזִכְרוֹן אֲבוֹתֵינוּ, זִכְרוֹן כָּל עַמְּךָ בֵּית יִשְׂרָאֵל וְזִכְרוֹן עִירְךָ וּמִקָּדְשְׁךָ לְטוֹבָה בְּיוֹם רֹאשׁ הַחֹדֶשׁ הַזֶּה, לְרַחֵם עָלֵינוּ בוֹ וּלְהוֹשִׁיעֵנוּ, כִּי אֶל וְרַחוּם אַתָּה לְבַדְּךָ נִקְרֵאתָ. אָז תַּחְפֹּץ זִבְחֵי צֶדֶק, עוֹלָה וְכָלִיל, אָז יַעֲלוּ עַל מִזְבַּחֲךָ פָרִים. וְהַשִּׂיאֶנּוּ, יְהוָה אֱלֹהֵינוּ, אֶת בִּרְכַּת מוֹעֲדֶיךָ לְשָׁלוֹם, כַּאֲשֶׁר אָמַרְתָּ וְרָצִיתָ, כֵּן תְּבָרְכֶנּוּ. וּבְנֵה אֶת יְרוּשָׁלַיִם בְּקָרוֹב כַּאֲשֶׁר דִּבַּרְתָּ.</p>
-</div>
+                <!-- Hanukkah/Purim Toggle -->
+                <button id="btn-toggle-alhanissim" onclick="toggleTrit('alhanissim')" class="flex items-center justify-center space-x-1 space-x-reverse w-16 h-8 rounded-md transition-all" title="על הניסים">
+                    <i class="fa-solid fa-fire-burner text-[10px]"></i>
+                    <span class="text-[10px] font-bold">ניסים</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN WRAPPER -->
+    <main class="flex-grow max-w-xl w-full mx-auto px-4 py-6">
+
+        <!-- PRAYER TEXT CONTAINER -->
+        <div id="prayer-container" class="card border rounded-2xl p-6 md:p-8 space-y-8 shadow-md">
             
-            <!-- הטוב והמטיב -->
-            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">הַטּוֹב וְהַמֵּטִיב</h2>
-            <p class="mb-4">
-בָּרוּךְ אַתָּה, יהוה, אֱלֹהֵינוּ, מֶלֶךְ הָעוֹלָם, הָאֵל, אָבִינוּ, מַלְכֵּנוּ, בּוֹרְאֵנוּ, גּוֹאֲלֵנוּ, הַמֶּלֶךְ הַטּוֹב וְהַמֵּטִיב, שֶׁבְּכָל יוֹם וָיוֹם הוּא מַרְבֶּה לְהֵטִיב עִמָּנוּ, וְהוּא יִגְמְלֵנוּ לָעַד חֵן וָחֶסֶד, רֶוַח וְרַחֲמִים וְכָל טוֹב.</p>
-            
-            <!-- ברכת האורח -->
-            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">ברכת האורח</h2>
-            <p class="mb-4">
-יְהִי רָצוֹן שֶׁלֹא יְבוֹשׁ בַּעַל הַבַּיִת בָּעוֹלָם הַזֶּה וְלֹא יִכָּלֵם לְעוֹלָם הַבָּא.</p>
-            
-            <!-- הרחמן -->
-            <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">הָרַחֲמָן</h2>
-            <p class="mb-4">
-הָרַחֲמָן יָאִיר עֵינֵינוּ בִּמְאוֹר תּוֹרָה. יַצְלִיחַ לָנוּ בְּכָל דְּרָכֵינוּ. יָשִׂים יִרְאָתוֹ לְנֶגֶד עֵינֵינוּ. יָסִיר מַחֲלָה מִקִּרְבֵּנוּ. יִגְעַר בְּחוֹשְׁבֵי רָעָתֵנוּ. הָרַחֲמָן יַנְחִילֵנוּ נִצָּחוֹן עַל כָּל אוֹיְבֵינוּ וְיִירַשׁ זַרְעֵנוּ אֵת שַׁעַר שֹׂנְאֵינוּ. יִהְיֶה לָנוּ עוֹזֵר וְסוֹמֵךְ. יהוה עֹ֖ז לְעַמּ֣וֹ יִתֵּ֑ן יהוה יְבָרֵ֖ךְ אֶת עַמּ֣וֹ בַשָּׁלֽוֹם.</p>
-            
-        </main>
-    </div>
+            <!-- 1. Birkat Hazan -->
+            <section id="section-zan" class="p-1">
+                <div class="flex items-center justify-between mb-3 border-b-2 border-amber-500/40 pb-2">
+                    <h2 class="text-xl font-bold accent-text">בִּרְכַּת הַזָּן</h2>
+                </div>
+                <p class="prayer-text text-justify tracking-wide">
+                    בָּרוּךְ אַתָּה, יי, אֱלֹהֵינוּ, מֶלֶךְ הָעוֹלָם, הַזָּן אוֹתָנוּ וְאֶת הָעוֹלָם כֻּלּוֹ, בְּטוֹב, בְּחֵן, בְּחֶסֶד וּבְרַחֲמִים. רְעֵנוּ, פַּרְנְסֵנוּ, וְאֶל תַּצְרִיכֵנוּ לִידֵי מַתְּנַת בָּשָׂר וָדָם, שֶׁלֹּא נֵבוֹשׁ וְלֹא נִכָּלֵם לְעוֹלָם וָעֶד. כָּאָמוּר: פּוֹתֵחַ אֶת יָדֶךָ, וּמַשְׂבִּיעַ לְכָל חַי רָצוֹן. בָּרוּךְ אַתָּה, יי, הַזָּן אֶת הַכֹּל.
+                </p>
+            </section>
+
+            <!-- 2. Birkat Ha'Aretz -->
+            <section id="section-aretz" class="p-1 space-y-4">
+                <div class="flex items-center justify-between mb-2 border-b-2 border-amber-500/40 pb-2">
+                    <h2 class="text-xl font-bold accent-text">בִּרְכַּת הָאָרֶץ</h2>
+                </div>
+                <p class="prayer-text text-justify tracking-wide">
+                    נוֹדֶה לְךָ, יי, אֱלֹהֵינו... כִּי הִנְחַלְתָּנוּ אֶרֶץ חֶמְדָּה טוֹבָה וּרְחָבָה, בְּרִית וְתוֹרָה, חַיִּים וּמָזוֹן. וְעַל כֻּלָּם אָנוּ מוֹדִים לְךָ וּמְבָרְכִים אֶת שִׁמְךָ לְעוֹלָם וָעֶד, כַּכָּתוּב: וְאָכַלְתָּ, וְשָׂבַעְתָּ; וּבֵרַכְתָּ אֶת יי אֱלֹהֶיךָ, עַל הָאָרֶץ הַטֹּבָה אֲשֶׁר נָתַן לָךְ.
+                </p>
+
+                <!-- INSERT: Al Hanissim (Toggleable) -->
+                <div id="insert-al-hanissim" class="hidden rounded-xl border-2 border-dashed border-amber-705 p-4 bg-amber-50 space-y-4">
+                    <div class="flex justify-between items-center pb-2 border-b border-amber-600">
+                        <span class="text-sm font-bold text-amber-900 font-sans"><i class="fa-solid fa-fire-burner ml-1.5"></i> עַל הַנִּסִּים (לַחֲנֻכָּה וּפֻרִים)</span>
+                        <span class="text-[10px] bg-amber-700 text-white px-2 py-0.5 rounded-full font-sans font-bold">פעיל בתפילה</span>
+                    </div>
+                    
+                    <!-- Chanukkah Text -->
+                    <div id="text-hanukkah" class="space-y-2">
+                        <p class="font-bold text-sm text-amber-950">לַחֲנֻכָּה:</p>
+                        <p class="prayer-text text-justify text-amber-950">
+                            עַל הַנִּסִּים וְעַל הַפֻּרְקָן וְעַל הַגְּבוּרוֹת וְעַל הַתְּשׁוּעוֹת וְעַל הַנֶּחָמוֹת שֶׁעָשִׂיתָ לַאֲבוֹתֵינוּ בַּיָּמִים הָהֵם בַּזְּמַן הַזֶּה. בִּימֵי מַתִּתְיָהוּ בֶּן יוֹחָנָן כֹּהֵן גָּדוֹל חַשְׁמוֹנַאי וּבָנָיו, כְּשֶׁעָמְדָה מַלְכוּת יָוָן הָרְשָׁעָה עַל עַמְּךָ יִשְׂרָאֵל לְהַשְׁכִּיחָם תּוֹרָתֶךָ וּלְהַעֲבִירָם מֵחֻקֵּי רְצוֹנֶךָ, וְאַתָּה בְּרַחֲמֶיךָ הָרַבִּים עָמַדְתָּ לָהֶם בְּעֵת צָרָתָם, רַבְתָּ אֶת רִיבָם, דַּנְתָּ אֶת דִּינָם, נָקַמְתָּ אֶת נִקְמָתָם, מָסַרְתָּ גִּבּוֹרִים בְּיַד חַלָּשִׁים וְרַבִּים בְּיַד מְעַטִּים וּרְשָׁעִים בְּיַד צַדִּיקִים וּטְמֵאִים בְּיַד טְהוֹרִים וְזֵדִים בְּיַד עוֹסְקֵי תוֹרָתֶךָ, וּלְךָ עָשִׂיתָ שֵׁם גָּדוֹל וְקָדוֹשׁ בְּעוֹלָמֶךָ וּלְעַמְּךָ יִשְׂרָאֵל עָשִׂיתָ תְּשׁוּעָה גְדוֹלָה וּפֻרְקָן כְּהַיּוֹם הַזֶּה, וְאַחַר כָּךְ בָּאוּ בָנֶיךָ לִדְבִיר בֵּיתֶךָ וּפִנּוּ אֶת הֵיכָלֶךָ וְטִהֲרוּ אֶת מִקְדָּשֶׁךָ וְהִדְלִיקוּ נֵרוֹת בְּחַצְרוֹת קָדְשֶׁךָ וְקָבְעוּ שְׁמוֹנַת יְמֵי חֲנֻכָּה אֵלֶּה בְּהַלֵּל וּבְהוֹדָאָה.
+                        </p>
+                    </div>
+
+                    <!-- Purim Text -->
+                    <div id="text-purim" class="space-y-2 border-t-2 border-amber-200 pt-3">
+                        <p class="font-bold text-sm text-amber-950">לְפֻרִים:</p>
+                        <p class="prayer-text text-justify text-amber-950">
+                            עַל הַנִּסִּים וְעַל הַפֻּרְקָן וְעַל הַגְּבוּרוֹת וְעַל הַתְּשׁוּעוֹת וְעַל הַנֶּחָמוֹת [שֶׁעָשִׂיתָ לַאֲבוֹתֵינוּ בַּיָּמִים הָהֵם בַּזְּמַן הַזֶּה]. בִּימֵי מָרְדֳּכַי וְאֶסְתֵּר בְּשׁוּשַׁן הַבִּירָה, כְּשֶׁעָמַד עֲלֵיהֶם הָמָן הָרָשָׁע, בִּקֵּשׁ לְהַשְׁמִיד לַהֲרֹג וּלְאַבֵּד אֶת כָּל הַיְּהוּדִים מִנַּעַר וְעַד זָקֵן טַף וְנָשִׁים בְּיוֹם אֶחָד, בִּשְׁלוֹשָׁה עָשָׂר לְחֹדֶשׁ שְׁנֵים עָשָׂר הוּא חֹדֶשׁ אֲדָר וּשְׁלָלָם לָבוֹז. וְאַתָּה בְּרַחֲמֶיךָ הָרַבִּים הֵפַרְתָּ אֶת עֲצָתוֹ וְקִלְקַלְתָּ אֶת מַחֲשַׁבְתּוֹ וַהֲשֵׁבוֹתָ לוֹ גְּמוּלוֹ בְּרֹאשׁוֹ וְתָלוּ אוֹתוֹ וְאֶת בָּנָיו עַל הָעֵץ.
+                        </p>
+                    </div>
+                </div>
+
+                <p class="prayer-text text-justify tracking-wide">
+                    בָּרוּךְ אַתָּה, יי, עַל הָאָרֶץ וְעַל הַמָּזוֹן.
+                </p>
+            </section>
+
+            <!-- 3. Boneh Yerushalayim -->
+            <section id="section-boneh" class="p-1 space-y-4">
+                <div class="flex items-center justify-between mb-2 border-b-2 border-amber-500/40 pb-2">
+                    <h2 class="text-xl font-bold accent-text">בּוֹנֵה יְרוּשָׁלָיִם</h2>
+                </div>
+                <p class="prayer-text text-justify tracking-wide">
+                    רַחֵם, יי, אֱלֹהֵינוּ, בְּרַחֲמֶיךָ הָרַבִּים עַל יִשְׂרָאֵל עַמֶּךָ, עַל יְרוּשָׁלַיִם עִירֶךָ וְעַל צִיּוֹן מִשְׁכַּן כְּבוֹדֶךָ. הָאֵר פָּנֶיךָ עַל מִקְדָּשְׁךָ הַשָּׁמֵם. בְּנֵה בֵּיתְךָ, שַׁכְלֵל הֵיכָלֶךָ. וּמַלְכוּת בֵּית דָּוִד הַחֲזֵר לִמְקוֹמָהּ בְּיָמֵינוּ.
+                </p>
+
+                <!-- INSERT: Ya'aleh V'Yavo (Rosh Chodesh/Holidays Toggle) -->
+                <div id="insert-yaaleh-veyavo" class="hidden rounded-xl border-2 border-dashed border-amber-700 p-4 bg-amber-50 space-y-2">
+                    <div class="flex justify-between items-center pb-2 border-b border-amber-600">
+                        <span class="text-sm font-bold text-amber-900 font-sans"><i class="fa-solid fa-moon"></i> יַעֲלֶה וְיָבֹא (לְראשׁ חֹדֶשׁ וּמוֹעֲדִים)</span>
+                        <span class="text-[10px] bg-amber-700 text-white px-2 py-0.5 rounded-full font-sans font-bold">פעיל בתפילה</span>
+                    </div>
+                    <p class="prayer-text text-justify text-amber-950">
+                        אָנָּא, אֱלֹהֵינוּ וֶאֱלֹהֵי אֲבוֹתֵינוּ, יַעֲלֶה וְיָבוֹא, יַגִּיעַ וְיִרְאֶה, יִזָּכֵר וְיִפָּקֵד לְפָנֶיךָ זִכְרוֹנֵנוּ וְזִכְרוֹן אֲבוֹתֵינוּ, זִכְרוֹן כָּל עַמְּךָ בֵּית יִשְׂרָאֵל וְזִכְרוֹן עִירְךָ וּמִקָּדְשְׁךָ לְטוֹבָה בְּיוֹם <span class="font-bold border-b border-amber-500" id="holiday-name-insert">רֹאשׁ הַחֹדֶשׁ</span> הַזֶּה, לְרַחֵם עָלֵינוּ בוֹ וּלְהוֹשִׁיעֵנוּ, כִּי אֶל וְרַחוּם אַתָּה לְבַדְּךָ נִקְרֵאתָ. אָז תַּחְפֹּץ זִבְחֵי צֶדֶק, עוֹלָה וְכָלִיל, אָז יַעֲלוּ עַל מִזְבַּחֲךָ פָרִים. וְהַשִּׂיאֶנּוּ, יי אֱלֹהֵינוּ, אֶת בִּרְכַּת מוֹעֲדֶיךָ לְשָׁלוֹם, כַּאֲשֶׁר אָמַרְתָּ וְרָצִיתָ, כֵּן תְּבָרְכֶנּו... וּבְנֵה אֶת יְרוּשָׁלַיִם בְּקָרוֹב כַּאֲשֶׁר דִּבַּרְתָּ.
+                    </p>
+                </div>
+
+                <p class="prayer-text text-justify tracking-wide">
+                    בָּרוּךְ אַתָּה, יי, בּוֹנֶה יְרוּשָׁלַיִם. אָמֵן.
+                </p>
+            </section>
+
+            <!-- 4. Hatov Vehametiv -->
+            <section id="section-hatov" class="p-1">
+                <div class="flex items-center justify-between mb-3 border-b-2 border-amber-500/40 pb-2">
+                    <h2 class="text-xl font-bold accent-text">הַטּוֹב וְהַמֵּטִיב</h2>
+                </div>
+                <p class="prayer-text text-justify tracking-wide">
+                    בָּרוּךְ אַתָּה, יי, אֱלֹהֵינוּ, מֶלֶךְ הָעוֹלָם, הָאֵל, אָבִינוּ, מַלְכֵּנוּ, בּוֹרְאֵנוּ, גּוֹאֲלֵנוּ, הַמֶּלֶךְ הַטּוֹב וְהַמֵּטִיב, שֶׁבְּכָל יוֹם וָיוֹם הוּא מַרְבֶּה לְהֵטִיב עִמָּנוּ, וְהוּא יִגְמְלֵנוּ לָעַד חֵן וָחֶסֶד, רֶוַח וְרַחֲמִים וְכָל טוֹב.
+                </p>
+            </section>
+
+            <!-- Guest Blessings Section (Parents blessing removed as requested) -->
+            <section id="section-guest" class="p-1 space-y-4">
+                <div class="flex items-center justify-between mb-2 border-b-2 border-amber-500/40 pb-2">
+                    <h2 class="text-xl font-bold accent-text">בִּרְכַּת הָאוֹרֵחַ</h2>
+                </div>
+                
+                <!-- Guest text -->
+                <div id="block-guest-text">
+                    <p class="prayer-text text-justify tracking-wide">
+                        יְהִי רָצוֹן שֶׁלֹּא יֵבוֹשׁ בַּעַל הַבַּיִת הַזֶּה בָּעוֹלָם הַזֶּה וְלֹא יִכָּלֵם לְעוֹלָם הַבָּא. יַצְלִיחַ אֱלֹהִים אֶת כָּל עֲסָקָיו, וְיִהְיוּ נְכָסָיו וּנְכָסֵינוּ מֻצְלָחִים וּקְרוֹבִים לָעִיר, וְאַל יִשְׁלֹט שָׂטָן בְּמַעֲשֵׂה יָדָיו.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 5. Harachaman -->
+            <section id="section-harachaman" class="p-1 space-y-4">
+                <div class="flex items-center justify-between mb-2 border-b-2 border-amber-500/40 pb-2">
+                    <h2 class="text-xl font-bold accent-text">הָרַחֲמָן</h2>
+                </div>
+                
+                <div class="prayer-text text-justify tracking-wide space-y-4">
+                    <p>הָרַחֲמָן יָאִיר עֵינֵינוּ בִּמְאוֹר תּוֹרָה.</p>
+                    <p>יַצְלִיחַ לָנוּ בְּכָל דְּרָכֵינוּ... </p>
+                    <p>יָשִׂים יִרְאָתוֹ לְנֶגֶד עֵינֵינוּ.</p>
+                    <p>יָסִיר מַחֲלָה מִקִּרְבֵּנוּ.</p>
+                    <p>יִגְעַר בְּחוֹשְׁבֵי רָעָתֵנוּ.</p>
+
+                    <!-- Rosh Chodesh / Holiday Harachaman -->
+                    <div id="harachaman-holiday" class="hidden font-bold border-r-4 border-amber-700 pr-3 my-2 text-amber-900">
+                        הָרַחֲמָן הוּא יְחַדֵּשׁ עָלֵינוּ אֶת הַחֹדֶשׁ הַזֶּה לְטוֹבָה וְלִבְרָכָה.
+                    </div>
+
+                    <p>הָרַחֲמָן יַנְחִילֵנוּ נִצָּחוֹן על כָּל אוֹיְבֵינוּ וְיִירַשׁ זַרְעֵנוּ אֵת שַׁעַר שֹׂנְאֵינוּ. יִהְיֶה לָנוּ עוֹזֵר וְסוֹמֵךְ.</p>
+                    
+                    <!-- Modified exact requested final verse with 'יי' -->
+                    <p class="font-bold border-t-2 border-dashed border-amber-500/40 pt-4 text-center text-amber-900">
+                        יי עֹז לְעַמּוֹ יִתֵּן יי יְבָרֵךְ אֶת עַמּוֹ בַשָּׁלוֹם
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </main>
 
     <script>
-        function toggleTheme() { 
-            document.body.classList.toggle('bg-dark'); 
-            document.getElementById('moon-icon').classList.toggle('hidden');
-            document.getElementById('sun-icon').classList.toggle('hidden');
-        }
+        // State variables
+        let isHoliday = false;
+        let isAlHanissim = false;
         
-        function changeFontSize(delta) {
-            const body = document.getElementById('prayer-body');
-            const style = window.getComputedStyle(body, null).getPropertyValue('font-size');
-            body.style.fontSize = (parseFloat(style) + delta) + 'px';
+        window.onload = function() {
+            // Apply loaded settings
+            updateTogglesVisuals();
         }
 
+        // Toggles State Management (Holiday, Al Hanissim)
+        function toggleTrit(type) {
+            if (type === 'holiday') {
+                isHoliday = !isHoliday;
+                const insertBlock = document.getElementById('insert-yaaleh-veyavo');
+                const harachamanHoliday = document.getElementById('harachaman-holiday');
+                if (isHoliday) {
+                    insertBlock.classList.remove('hidden');
+                    harachamanHoliday.classList.remove('hidden');
+                } else {
+                    insertBlock.classList.add('hidden');
+                    harachamanHoliday.classList.add('hidden');
+                }
+            } else if (type === 'alhanissim') {
+                isAlHanissim = !isAlHanissim;
+                const insertBlock = document.getElementById('insert-al-hanissim');
+                if (isAlHanissim) {
+                    insertBlock.classList.remove('hidden');
+                } else {
+                    insertBlock.classList.add('hidden');
+                }
+            }
+            updateTogglesVisuals();
+        }
+
+        function updateTogglesVisuals() {
+            const btnHoliday = document.getElementById('btn-toggle-holiday');
+            const btnAlhanissim = document.getElementById('btn-toggle-alhanissim');
+
+            const activeClass = "bg-amber-700 text-white scale-105 shadow-sm border border-white/20";
+            const inactiveClass = "text-amber-900/90 hover:bg-amber-500/10 border border-transparent";
+
+            btnHoliday.className = `flex items-center justify-center space-x-1 space-x-reverse w-16 h-8 rounded-md transition-all ${isHoliday ? activeClass : inactiveClass}`;
+            btnAlhanissim.className = `flex items-center justify-center space-x-1 space-x-reverse w-16 h-8 rounded-md transition-all ${isAlHanissim ? activeClass : inactiveClass}`;
+        }
     </script>
 </body>
 </html>
