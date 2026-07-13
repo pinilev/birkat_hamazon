@@ -4,21 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>בִּרְכַּת הַמָּזוֹן - נֹסַח אֶרֶץ יִשְׂרָאֵל</title>
-    <script src="https://cdn.tailwindcss.com">
-function checkAutoYaale() {
-    const date = new Date();
-    // בדיקה אם מחר הוא ראש חודש (ההלכה היא לפי הלילה שלפני) או היום ראש חודש
-    // בשביל פשטות, נבדוק לפי התאריך העברי של ה-Intl
-    const formatter = new Intl.DateTimeFormat('he-u-ca-hebrew', { day: 'numeric' });
-    const day = parseInt(formatter.format(date));
-    
-    // בלוח עברי, אם היום ה-1 בחודש או ה-30 (יום ראשון של ר"ח במידה והחודש מלא)
-    if (day === 1 || day === 30) {
-        document.getElementById('yaale-veyavo').classList.remove('hidden');
-    }
-}        
-    </script>
-    
+ 
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=synagogue" />
     <style>
@@ -37,16 +23,6 @@ function checkAutoYaale() {
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <h1 class="text-xl font-bold text-amber-900">בִּרְכַּת הַמָּזוֹן - נֹסַח אֶרֶץ יִשְׂרָאֵל<br><span id="date-display" class="font-normal text-amber-700"></span></h1>
-                </div>
-                <div class="flex items-center gap-2 flex-wrap w-full sm:w-auto justify-end">
-                    <!-- מצב יום/לילה -->
-                    <button onclick="toggleTheme()" id="theme-btn" class="bg-amber-600 hover:bg-amber-700 text-white p-2 rounded-lg w-10 h-10 flex items-center justify-center transition-colors">
-                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                    </button>
-                    <!-- הגדלת/הקטנת פונט -->
-                    <button onclick="changeFontSize(2)" class="bg-amber-600 hover:bg-amber-700 text-white w-10 h-10 rounded-lg font-bold transition-colors">+</button>
-                    <button onclick="changeFontSize(-2)" class="bg-amber-600 hover:bg-amber-700 text-white w-10 h-10 rounded-lg font-bold transition-colors">-</button>
                 </div>
             </div>
         </header>
@@ -69,7 +45,6 @@ function checkAutoYaale() {
 בָּרוּךְ אַתָּה, יהוה, בּוֹנֶה יְרוּשָׁלַיִם. אָמֵן.</p>
 
             <!-- יעלה ויבוא -->
-            <div id="yaale-veyavo" class="hidden">
     <h2 class="text-xl font-bold text-amber-900 mb-4 border-b border-amber-100 pb-1">יַעֲלֶה וְיָבֹא</h2>
     <p class="mb-4">
 אָנָּא, אֱלֹהֵינוּ וֶאֱלֹהֵי אֲבוֹתֵינוּ, יַעֲלֶה וְיָבוֹא, יַגִּיעַ וְיִרְאֶה, יִזָּכֵר וְיִפָּקֵד לְפָנֶיךָ זִכְרוֹנֵנוּ וְזִכְרוֹן אֲבוֹתֵינוּ, זִכְרוֹן כָּל עַמְּךָ בֵּית יִשְׂרָאֵל וְזִכְרוֹן עִירְךָ וּמִקָּדְשְׁךָ לְטוֹבָה בְּיוֹם רֹאשׁ הַחֹדֶשׁ הַזֶּה, לְרַחֵם עָלֵינוּ בוֹ וּלְהוֹשִׁיעֵנוּ, כִּי אֶל וְרַחוּם אַתָּה לְבַדְּךָ נִקְרֵאתָ. אָז תַּחְפֹּץ זִבְחֵי צֶדֶק, עוֹלָה וְכָלִיל, אָז יַעֲלוּ עַל מִזְבַּחֲךָ פָרִים. וְהַשִּׂיאֶנּוּ, יְהוָה אֱלֹהֵינוּ, אֶת בִּרְכַּת מוֹעֲדֶיךָ לְשָׁלוֹם, כַּאֲשֶׁר אָמַרְתָּ וְרָצִיתָ, כֵּן תְּבָרְכֶנּוּ. וּבְנֵה אֶת יְרוּשָׁלַיִם בְּקָרוֹב כַּאֲשֶׁר דִּבַּרְתָּ.</p>
@@ -106,46 +81,6 @@ function checkAutoYaale() {
             body.style.fontSize = (parseFloat(style) + delta) + 'px';
         }
 
-        // המרת מספרים לפורמט אותיות עבריות (גימטריה) עם גרשיים נכונים
-        function toGimel(n) {
-            const map = {1:'א', 2:'ב', 3:'ג', 4:'ד', 5:'ה', 6:'ו', 7:'ז', 8:'ח', 9:'ט', 10:'י', 20:'כ', 30:'ל', 40:'מ', 50:'נ', 60:'ס', 70:'ע', 80:'פ', 90:'צ', 100:'ק', 200:'ר', 300:'ש', 400:'ת'};
-            let res = '', rem = n;
-            while (rem >= 400) { res += 'ת'; rem -= 400; }
-            if (rem >= 300) { res += 'ש'; rem -= 300; }
-            if (rem >= 200) { res += 'ר'; rem -= 200; }
-            if (rem >= 100) { res += 'ק'; rem -= 100; }
-            if (rem >= 10) {
-                if (rem === 15) { res += 'טו'; rem = 0; }
-                else if (rem === 16) { res += 'טז'; rem = 0; }
-                else {
-                    const t = Math.floor(rem/10)*10;
-                    res += map[t];
-                    rem %= 10;
-                }
-            }
-            if (rem > 0) res += map[rem];
-            return res.length > 1 ? res.slice(0, -1) + '"' + res.slice(-1) : res + "'";
-        }
-        // טעינת ועדכון התאריך העברי של היום במסך
-        async function updateDate() {
-            try {
-                const date = new Date();
-                const formatter = new Intl.DateTimeFormat('he-u-ca-hebrew', { day: 'numeric', month: 'long', year: 'numeric' });
-                const parts = formatter.formatToParts(date);
-                
-                const day = parseInt(parts.find(p => p.type === 'day').value);
-                const monthName = parts.find(p => p.type === 'month').value.replace(/[^א-ת\s']/g, '').trim();
-                const year = parseInt(parts.find(p => p.type === 'year').value);
-                
-                document.getElementById('date-display').innerText = ` ${toGimel(day)} ב${monthName} ה'${toGimel(year - 5000)}`;
-                checkAutoYaale();
-            } catch(e) { 
-                // ברירת מחדל בטוחה למניעת קריסה במקרה של חוסר תאימות בדפדפן
-                document.getElementById('date-display').innerText = " ט\"ז בסיון תשפ\"ו"; 
-            }
-        }
-        
-        updateDate();
     </script>
 </body>
 </html>
